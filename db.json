@@ -1,0 +1,34 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "danny"
+    },
+    {
+      "id": 2,
+      "name": "Suzzy"
+    }
+  ],
+  "dishes": [
+    {
+      "id": 3,
+      "name": "Spagethhi"
+    },
+    {
+      "id": 5,
+      "name": "Hamburger"
+    },
+    {
+      "id": 7,
+      "name": "ice cream"
+    },
+    {
+      "id": 10,
+      "name": "ice coffee"
+    },
+    {
+      "id": 11,
+      "name": "chocolate"
+    }
+  ]
+}

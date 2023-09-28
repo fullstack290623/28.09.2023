@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vanilla JavaScript Animation</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+            opacity: 1; /* Start with opacity set to 1 */
+            transition: all 1s; /* Add a CSS transition for smooth animation */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="slideAndFade">Slide and Fade</button>
+
+    <script>
+        document.getElementById("slideAndFade").addEventListener("click", function() {
+            var box = document.querySelector(".box");
+            box.style.left = '200px';
+            box.style.opacity = '0';
+        });
+    </script>
+</body>
+</html>

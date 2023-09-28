@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        // will run ONLY after the page was loaded...
+        $(() => {
+            // document.getElementById("btn1").addEventListener("click", () => {
+            // alert('click')
+            // })            
+            $("#btn1").click(function () {
+
+                const obj1 = {
+                    name: 'itay',
+                    age: 18
+                }
+
+
+
+                // 1
+                // $.get("http://localhost:3000/dishes/7",
+                //     (data, status) => {
+                //         // 4
+                //         document.write(JSON.stringify(data))
+                //     })
+
+                // 2 
+                // 3
+
+                // fetch('http://localhost:3000/dishes/7')
+                //     .then(response => response.json())
+                //     .then(data => {
+                //         document.write(JSON.stringify(data));
+                //     })
+
+                fetch("http://localhost:3000/dishes",
+                    {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            "id": 11,
+                            "name": "orange juice"
+                        })
+                    })
+                    .then(function (res) { return res.json(); })
+                    .then(function (data) { alert(JSON.stringify(data)) })
+
+                fetch("http://localhost:3000/dishes/11",
+                    {
+                        method: "PUT",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            "id": 11,
+                            "name": "chocolate"
+                        })
+                    })
+                    .then(function (res) { return res.json(); })
+                    .then(function (data) { alert(JSON.stringify(data)) })
+            });
+
+        });
+
+        //$("button")
+        //$("#btn1")
+    </script>
+
+    <button id="btn1">CLICK ME!</button>
+</body>
+
+</html>

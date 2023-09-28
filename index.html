@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        // will run ONLY after the page was loaded...
+        $(() => {
+            // document.getElementById("btn1").addEventListener("click", () => {
+            // alert('click')
+            // })            
+            $("#btn1").click(function () {
+
+                const obj1 = {
+                    name: 'itay',
+                    age: 18
+                }
+
+                $.ajax({
+                    url: 'https://example.com/api/data',
+                    method: 'GET',
+                    success: function (data) {
+                        // Handle the response
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle errors
+                    }
+                });
+
+                // 1
+                $.get("https://jsonplaceholder.typicode.com/users/1",
+                    (data, status) => {
+                        // 4
+                        document.write(JSON.stringify(data))
+                    })
+
+                // 2 
+                // 3
+
+                fetch('https://jsonplaceholder.typicode.com/users/1')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.write(JSON.stringify(data));
+                    })
+
+                fetch("/echo/json/",
+                    {
+                        method: "POST",
+                        body: { "id": 1, name:"danny", age: 20}
+                    })
+                    .then(function (res) { return res.json(); })
+                    .then(function (data) { alert(JSON.stringify(data)) })
+
+
+            });
+
+
+        });
+
+        //$("button")
+        //$("#btn1")
+    </script>
+
+    <button id="btn1">CLICK ME!</button>
+    <p class=".class1">HIDE ME ...</p>
+    <p class=".class2">HIDE ME ...</p>
+</body>
+
+</html>
