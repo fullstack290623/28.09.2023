@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        // will run ONLY after the page was loaded...
+        $(() => {
+            // document.getElementById("btn1").addEventListener("click", () => {
+            // alert('click')
+            // })            
+            $("#btn1").click(function () {
+
+                const obj1 = {
+                    name: 'itay',
+                    age: 18
+                }
+
+                fetch('https://hp-api.onrender.com/api/characters')
+                    .then(response => response.json())
+                    .then(data => {
+                        //document.write(JSON.stringify(data));
+                        //document.write(data[5].image)
+                        $("#img1").attr("src", data[5].image)
+                        // instead could just-
+                        //document.getElementById("img1").src = data[5].image
+                    })
+
+           
+            });
+
+        });
+
+        //$("button")
+        //$("#btn1")
+    </script>
+
+    <button id="btn1">CLICK ME!</button><br /><br /><br />
+    <img id="img1" style="width: 300px"></img>
+</body>
+</body>
+
+</html>
